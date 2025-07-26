@@ -1,20 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const Message = require('../models/Message');
+const Message = require('../models/message'); // lowercase 'm' here!
 
 // GET all messages
 router.get('/', async (req, res) => {
   try {
     const messages = await Message.find().sort({ createdAt: -1 });
-    console.log("Fetched messages:", messages);
     res.json(messages);
   } catch (err) {
-    console.error("Error fetching messages:", err);
     res.status(500).json({ error: 'Server error' });
   }
 });
 
-// POST a new message
+// POST a message
 router.post('/', async (req, res) => {
   try {
     const { name, text } = req.body;
