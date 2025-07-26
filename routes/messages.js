@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Message = require('../models/message'); // lowercase 'm' here!
+const Message = require('../models/Message'); // lowercase 'm' here!
 
 // GET all messages
 router.get('/', async (req, res) => {
