@@ -5,4 +5,4 @@ const messageSchema = new mongoose.Schema({
   text: { type: String, required: true }
 }, { timestamps: true }); // this adds createdAt and updatedAt automatically
 
-module.exports = mongoose.model('Message', messageSchema);
+module.exports = mongoose.model('message', messageSchema);
