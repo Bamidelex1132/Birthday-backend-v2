@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 const messageSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  text: { type: String, required: true }
-}, { timestamps: true }); // this adds createdAt and updatedAt automatically
+  message: { type: String, required: true },
+  createdAt: { type: Date, default: Date.now }
+});
 
-module.exports = mongoose.model('message', messageSchema);
+module.exports = mongoose.model('Message', messageSchema);
