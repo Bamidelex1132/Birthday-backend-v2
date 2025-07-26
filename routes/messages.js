@@ -6,8 +6,10 @@ const Message = require('../models/Message');
 router.get('/', async (req, res) => {
   try {
     const messages = await Message.find().sort({ createdAt: -1 });
+    console.log("Fetched messages:", messages);
     res.json(messages);
   } catch (err) {
+    console.error("Error fetching messages:", err);
     res.status(500).json({ error: 'Server error' });
   }
 });
